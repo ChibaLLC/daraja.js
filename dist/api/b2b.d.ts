@@ -43,7 +43,7 @@ export declare class BusinessToBusiness {
      * Transaction type / Command ID
      *
      * @description Set the type of transaction taking place
-     * @param  {"SalaryPayment"|"BusinessPayment"|"PromotionPayment"} type Unique command for each transaction type
+     * @param  {"BusinessPayBill" | "BusinessBuyGoods"} type Unique command for each transaction type
      * @returns {BusinessToCustomer} Returns a reference to the B2C object for further manipulation
      */
     transactionType(type: "BusinessPayBill" | "BusinessBuyGoods"): BusinessToBusiness;
@@ -99,12 +99,12 @@ export declare class BusinessToBusiness {
      * @param {"MSISDN" | "TILL" | "PAYBILL"} _type
      * @returns {BusinessToBusiness}
      */
-    senderType(_type: string): void;
+    senderType(_type: "MSISDN" | "TILL" | "PAYBILL"): this;
     /**
      * @param {"MSISDN" | "TILL" | "PAYBILL"} _type
      * @returns {BusinessToBusiness}
      */
-    receiverType(_type: string): void;
+    receiverType(_type: "MSISDN" | "TILL" | "PAYBILL"): this;
     send(): Promise<B2BResponseWrapper>;
 }
 declare class B2BResponseWrapper implements MpesaResponse {

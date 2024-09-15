@@ -87,7 +87,7 @@ export class BusinessToBusiness {
      * Transaction type / Command ID
      *
      * @description Set the type of transaction taking place
-     * @param  {"SalaryPayment"|"BusinessPayment"|"PromotionPayment"} type Unique command for each transaction type
+     * @param  {"BusinessPayBill" | "BusinessBuyGoods"} type Unique command for each transaction type
      * @returns {BusinessToCustomer} Returns a reference to the B2C object for further manipulation
      */
     public transactionType(
@@ -173,7 +173,7 @@ export class BusinessToBusiness {
      * @param {"MSISDN" | "TILL" | "PAYBILL"} _type
      * @returns {BusinessToBusiness}
      */
-    public senderType(_type: string) {
+    public senderType(_type: "MSISDN" | "TILL" | "PAYBILL") {
         switch (_type) {
             case "MSISDN":
                 this._senderType = "1"
@@ -187,13 +187,15 @@ export class BusinessToBusiness {
             default:
                 throw new Error(`Invalid Sender Type Passed, Options are: "MSISDN" | "TILL" | "PAYBILL"`)
         }
+
+        return this
     }
 
     /**
      * @param {"MSISDN" | "TILL" | "PAYBILL"} _type
      * @returns {BusinessToBusiness}
      */
-    public receiverType(_type: string) {
+    public receiverType(_type: "MSISDN" | "TILL" | "PAYBILL") {
         switch (_type) {
             case "MSISDN":
                 this._receiverType = "1"
@@ -207,6 +209,8 @@ export class BusinessToBusiness {
             default:
                 throw new Error(`Invalid Receiver Type Passed, Options are: "MSISDN" | "TILL" | "PAYBILL"`)
         }
+
+        return this
     }
 
     public async send(): Promise<B2BResponseWrapper> {

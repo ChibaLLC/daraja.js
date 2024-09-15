@@ -79,7 +79,7 @@ class BusinessToBusiness {
      * Transaction type / Command ID
      *
      * @description Set the type of transaction taking place
-     * @param  {"SalaryPayment"|"BusinessPayment"|"PromotionPayment"} type Unique command for each transaction type
+     * @param  {"BusinessPayBill" | "BusinessBuyGoods"} type Unique command for each transaction type
      * @returns {BusinessToCustomer} Returns a reference to the B2C object for further manipulation
      */
     transactionType(type) {
@@ -170,6 +170,7 @@ class BusinessToBusiness {
             default:
                 throw new Error(`Invalid Sender Type Passed, Options are: "MSISDN" | "TILL" | "PAYBILL"`);
         }
+        return this;
     }
     /**
      * @param {"MSISDN" | "TILL" | "PAYBILL"} _type
@@ -189,6 +190,7 @@ class BusinessToBusiness {
             default:
                 throw new Error(`Invalid Receiver Type Passed, Options are: "MSISDN" | "TILL" | "PAYBILL"`);
         }
+        return this;
     }
     send() {
         return __awaiter(this, void 0, void 0, function* () {
