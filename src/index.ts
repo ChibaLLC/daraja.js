@@ -16,7 +16,7 @@ import {
   getSandboxCert,
 } from "./utils";
 import { ValidationRequestWrapper } from "./wrappers";
-import { BusinessToBusiness } from "api/b2b";
+import { BusinessToBusiness } from "./api/b2b";
 
 interface MpesaCredentials {
   consumerKey: string;
