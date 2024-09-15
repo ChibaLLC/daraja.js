@@ -14,7 +14,6 @@ interface MpesaCredentials {
     organizationShortCode?: number;
 }
 export declare class Mpesa {
-    private environment;
     private _http;
     private consumerKey;
     private consumerSecret;
@@ -23,9 +22,10 @@ export declare class Mpesa {
     private globalShortCode;
     private builderCfg;
     private debugMode;
+    private environment;
     constructor({ consumerKey, consumerSecret, securityCredential, initiatorPassword, certificatePath, organizationShortCode, debug, }: MpesaCredentials & {
         debug?: boolean;
-    }, environment?: string);
+    }, envirmoment?: "sandbox" | "production");
     private debug;
     private _getAuthToken;
     private generateSecurityCredential;

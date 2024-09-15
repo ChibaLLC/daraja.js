@@ -29,8 +29,8 @@ const utils_1 = require("./utils");
 const wrappers_1 = require("./wrappers");
 Object.defineProperty(exports, "ValidationRequestWrapper", { enumerable: true, get: function () { return wrappers_1.ValidationRequestWrapper; } });
 class Mpesa {
-    constructor({ consumerKey, consumerSecret, securityCredential, initiatorPassword, certificatePath, organizationShortCode, debug = process.env.DEBUG === "true", }, environment = "sandbox") {
-        this.environment = environment;
+    constructor({ consumerKey, consumerSecret, securityCredential, initiatorPassword, certificatePath, organizationShortCode, debug = process.env.DEBUG === "true", }, envirmoment = "sandbox") {
+        this.environment = envirmoment;
         this.debugMode = debug;
         this.consumerKey = consumerKey;
         this.consumerSecret = consumerSecret;

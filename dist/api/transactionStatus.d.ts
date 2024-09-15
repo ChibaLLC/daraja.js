@@ -46,6 +46,11 @@ export declare class TransactionStatus {
      */
     resultURL(url: string): TransactionStatus;
     /**
+     * @param  {string} identifierType "1" = MSISDN, "2" = Till Number, "4"=Shortcode
+     * @returns {TransactionStatus} A reference to the TransactionStatus object for further manipulation
+     */
+    identifierType(identifierType: "1" | "2" | "4"): TransactionStatus;
+    /**
      * @param  {string} url The timeout end-point that receives a timeout response.
      * @returns {TransactionStatus} A reference to the TransactionStatus object for further manipulation
      */

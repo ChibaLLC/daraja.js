@@ -17,7 +17,7 @@ class TransactionStatus {
         this.config = config;
         // defaults
         this._commandID = "TransactionStatusQuery";
-        this._identifierType = "1";
+        this._identifierType = "4";
         this._initiator = "testapi";
     }
     _debugAssert() {
@@ -80,6 +80,14 @@ class TransactionStatus {
         return this;
     }
     /**
+     * @param  {string} identifierType "1" = MSISDN, "2" = Till Number, "4"=Shortcode
+     * @returns {TransactionStatus} A reference to the TransactionStatus object for further manipulation
+     */
+    identifierType(identifierType) {
+        this._identifierType = identifierType;
+        return this;
+    }
+    /**
      * @param  {string} url The timeout end-point that receives a timeout response.
      * @returns {TransactionStatus} A reference to the TransactionStatus object for further manipulation
      */
@@ -96,7 +104,7 @@ class TransactionStatus {
             try {
                 const data = yield app.http.post(routes_1.routes.transactionstatus, {
                     PartyA: this._shortCode,
-                    IdentifierType: (_a = this._identifierType) !== null && _a !== void 0 ? _a : "1",
+                    IdentifierType: (_a = this._identifierType) !== null && _a !== void 0 ? _a : "4",
                     Initiator: (_b = this._initiator) !== null && _b !== void 0 ? _b : "testapi",
                     SecurityCredential: this.config.securityCredential,
                     QueueTimeOutURL: this._timeoutURL,
