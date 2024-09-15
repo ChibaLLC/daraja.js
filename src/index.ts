@@ -16,6 +16,7 @@ import {
   getSandboxCert,
 } from "./utils";
 import { ValidationRequestWrapper } from "./wrappers";
+import { BusinessToBusiness } from "api/b2b";
 
 interface MpesaCredentials {
   consumerKey: string;
@@ -196,6 +197,10 @@ export class Mpesa {
    */
   public b2c(): BusinessToCustomer {
     return new BusinessToCustomer(this.builderCfg);
+  }
+
+  public b2b(): BusinessToBusiness {
+    return new BusinessToBusiness(this.builderCfg);
   }
 
   /**
