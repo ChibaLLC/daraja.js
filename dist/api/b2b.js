@@ -109,6 +109,16 @@ class BusinessToBusiness {
         return this;
     }
     /**
+     * Party B
+     *
+     * @param till
+     * @returns
+     */
+    tillNumber(till) {
+        this._partyB = till;
+        return this;
+    }
+    /**
      * Account Reference
      *
      * @description A method to set the account reference.

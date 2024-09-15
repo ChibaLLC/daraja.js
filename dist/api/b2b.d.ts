@@ -64,6 +64,13 @@ export declare class BusinessToBusiness {
      */
     payBill(paybill: string): this;
     /**
+     * Party B
+     *
+     * @param till
+     * @returns
+     */
+    tillNumber(till: string): this;
+    /**
      * Account Reference
      *
      * @description A method to set the account reference.

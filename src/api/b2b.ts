@@ -122,6 +122,17 @@ export class BusinessToBusiness {
     }
 
     /**
+     * Party B
+     * 
+     * @param till 
+     * @returns 
+     */
+    public tillNumber(till: string) {
+        this._partyB = till
+        return this
+    }
+
+    /**
      * Account Reference
      * 
      * @description A method to set the account reference.

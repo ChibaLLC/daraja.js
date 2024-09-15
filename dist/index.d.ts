@@ -5,7 +5,7 @@ import { Reversal } from "./api/reversal";
 import { STKPush, STKPushResultWrapper } from "./api/stkPush";
 import { TransactionStatus } from "./api/transactionStatus";
 import { ValidationRequestWrapper } from "./wrappers";
-import { BusinessToBusiness } from "api/b2b";
+import { BusinessToBusiness } from "./api/b2b";
 interface MpesaCredentials {
     consumerKey: string;
     consumerSecret: string;

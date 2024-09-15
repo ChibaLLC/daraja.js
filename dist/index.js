@@ -28,7 +28,7 @@ const storage_1 = __importDefault(require("./storage"));
 const utils_1 = require("./utils");
 const wrappers_1 = require("./wrappers");
 Object.defineProperty(exports, "ValidationRequestWrapper", { enumerable: true, get: function () { return wrappers_1.ValidationRequestWrapper; } });
-const b2b_1 = require("api/b2b");
+const b2b_1 = require("./api/b2b");
 class Mpesa {
     constructor({ consumerKey, consumerSecret, securityCredential, initiatorPassword, certificatePath, organizationShortCode, debug = process.env.DEBUG === "true", }, envirmoment = "sandbox") {
         this.environment = envirmoment;
