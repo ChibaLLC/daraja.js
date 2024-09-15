@@ -5,6 +5,7 @@ import { Reversal } from "./api/reversal";
 import { STKPush, STKPushResultWrapper } from "./api/stkPush";
 import { TransactionStatus } from "./api/transactionStatus";
 import { ValidationRequestWrapper } from "./wrappers";
+import { BusinessToBusiness } from "api/b2b";
 interface MpesaCredentials {
     consumerKey: string;
     consumerSecret: string;
@@ -74,6 +75,7 @@ export declare class Mpesa {
      *   .send(); // The actual method that invokes the request
      */
     b2c(): BusinessToCustomer;
+    b2b(): BusinessToBusiness;
     /**
      * Lipa Na Mpesa Online / STK Push / Mpesa Express
      * @description This method is used to construct an instance of the `STKPush` class by passing various credentials after which you can either send and stk push request or query the status of an already sent transaction
